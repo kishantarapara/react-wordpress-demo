@@ -11,7 +11,7 @@ interface PostDetailsProps {
 }
 
 const PostDetails = ({ postData }: PostDetailsProps) => {
-  const { content, title, featured_image, modified, ID, author } = postData;
+  const { content, title, modified, author } = postData;
   return (
     <div>
       <div className={Styles["post-detail-title"]}>{title}</div>

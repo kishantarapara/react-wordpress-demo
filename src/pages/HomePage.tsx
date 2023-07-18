@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getPosts } from "../api-services/posts";
 import { Post } from "../types/post";
 import PostList from "../components/Post/PostList";
+import { toast } from "react-toastify";
 
 const HomePage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -25,8 +26,11 @@ const HomePage = () => {
           );
         }
       })
-      .catch((error) => console.error(error));
-  }, []);
+      .catch((error) => {
+        console.error(error);
+        toast(error.message);
+      });
+  }, [setPosts]);
 
   return (
     <div className="app-container">

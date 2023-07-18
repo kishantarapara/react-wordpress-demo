@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 import Styles from "./style.module.css";
 import Button from "../Common/Button/Button";
@@ -12,7 +13,22 @@ const CreatePostFrom = () => {
     <div>
       <div className={Styles["top-bar"]}>
         <div>Create New Post</div>
-        <Button onClick={() => createPost({ title, content })}>Save</Button>
+        <Button
+          onClick={() => {
+            createPost({ title, content })
+              .then((res) => {
+                if (res.status === 201) {
+                  toast.success("Post created successfully.");
+                }
+              })
+              .catch((error) => {
+                console.log("error", error);
+                toast.error(error.message);
+              });
+          }}
+        >
+          Save
+        </Button>
       </div>
       <div className={`${Styles["create-post-editor"]}`}>
         <div>

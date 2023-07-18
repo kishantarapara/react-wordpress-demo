@@ -18,7 +18,7 @@ export const createPost = ({
   title: string;
   content: string;
 }) => {
-  axiosInstance.post(`${NEW_POST_URL}`, { title, content });
+  return axiosInstance.post(`${NEW_POST_URL}`, { title, content });
 };
 
 export const getSettings = () => axiosInstance.get(SETTINGS_URL);

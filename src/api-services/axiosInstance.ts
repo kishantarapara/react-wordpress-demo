@@ -27,10 +27,4 @@ axiosInstance.interceptors.request.use(
   (error) => error
 );
 
-axiosInstance.interceptors.response.use(
-  // interceptors for response
-  (config) => config,
-  (error) => error
-);
-
 export default axiosInstance;

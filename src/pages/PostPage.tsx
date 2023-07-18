@@ -25,7 +25,7 @@ const PostPage = (props: any) => {
         }
       });
     }
-  }, [id]);
+  }, [id, postData]);
 
   return (
     <div className="app-container">

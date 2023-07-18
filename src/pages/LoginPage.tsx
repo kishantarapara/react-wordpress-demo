@@ -4,12 +4,9 @@ import { useNavigate } from "react-router-dom";
 import Button from "../components/Common/Button/Button";
 import { AUTH_URL } from "../constants/requestUrl";
 import { AppContext, AppContextType } from "../store/AppContext";
-import { getSettings } from "../api-services/posts";
 
 const LoginPage = () => {
-  const { token, setToken, userName, setUsername } = useContext(
-    AppContext
-  ) as AppContextType;
+  const { setToken } = useContext(AppContext) as AppContextType;
 
   const navigate = useNavigate();
 
@@ -25,7 +22,7 @@ const LoginPage = () => {
       //   console.log(res);
       // });
 
-      if (urlToken != null || urlToken != undefined) {
+      if (urlToken) {
         localStorage.setItem("access_token", urlToken);
         setToken(urlToken);
         navigate("/");
@@ -33,7 +30,7 @@ const LoginPage = () => {
     } else {
       navigate("/");
     }
-  });
+  }, [navigate, setToken]);
 
   return (
     <div className="app-container">
