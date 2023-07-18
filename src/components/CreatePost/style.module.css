@@ -1,0 +1,38 @@
+.top-bar{
+    display: inline-flex;
+    padding: 10px 5vw;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.top-bar > div {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.create-post-editor {
+    background-color: transparent;
+    border: none;
+    font-family: monospace;
+    width: 80%;
+    margin:  0 10%;
+}
+
+.create-post-title-editor {
+    font-size: 54px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.create-post-editor:focus-visible {
+    border: none;
+    outline: none;
+}
+
+.create-post-content-editor {
+    font-size: 32px;
+    font-weight: 700;
+}

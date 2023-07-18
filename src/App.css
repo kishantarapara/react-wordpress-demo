@@ -1,0 +1,13 @@
+:root {
+    --primary: #02182B;
+    --secondary: #e0f0fe;
+}
+
+body {
+    background-color: var(--secondary);
+    font-family: sans-serif;
+}
+
+.app-container {
+    padding:  20px 20%;
+}

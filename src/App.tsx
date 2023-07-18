@@ -1,12 +1,15 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import AppRouter from "./components/Router/AppRouter";
+import AppContextProvider from "./store/AppContext";
 
 function App() {
-
   return (
-    <div className="App">
-      Hello World!!!
-    </div>
+    <AppContextProvider>
+      <div className="bg-secondary">
+        <AppRouter />
+      </div>
+    </AppContextProvider>
   );
 }
 
